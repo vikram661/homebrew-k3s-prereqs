@@ -4,17 +4,16 @@ class K3sPrereqs < Formula
   version "1.0.0"
   sha256 "d41d8cd98f00b204e9800998ecf8427e" # Dummy SHA for an empty script
   
-  # Providing a small dummy script to satisfy Homebrew's URL requirement
   url "https://raw.githubusercontent.com/vikram661/homebrew-k3s-prereqs/main/k3s-prereqs.sh"
-  
+
   depends_on "yq"
-  depends_on "hashicorp/tap/hashicorp-vagrant"
+  depends_on "hashicorp/tap/vagrant"
 
   def install
-    # Homebrew requires at least one installable file
+    # Ensure a valid install step
     bin.install "k3s-prereqs.sh"
 
-    # Install the Vagrant Hostmanager plugin
+    # Install Vagrant Hostmanager plugin
     ohai "Installing vagrant-hostmanager plugin..."
     system "vagrant", "plugin", "install", "vagrant-hostmanager"
   end
