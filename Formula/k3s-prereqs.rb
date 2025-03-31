@@ -3,15 +3,17 @@ class K3sPrereqs < Formula
   homepage "https://github.com/airbytehq/support-k3s-lab"
   version "1.0.0"
   sha256 "d41d8cd98f00b204e9800998ecf8427e" # Dummy SHA for an empty script
-  
+
   url "https://raw.githubusercontent.com/vikram661/homebrew-k3s-prereqs/main/k3s-prereqs.sh"
 
   depends_on "yq"
-  depends_on "hashicorp/tap/vagrant"
 
   def install
-    # Ensure a valid install step
     bin.install "k3s-prereqs.sh"
+
+    # Install Vagrant (since it's a Cask, we use system calls)
+    ohai "Installing Vagrant..."
+    system "brew", "install", "--cask", "vagrant"
 
     # Install Vagrant Hostmanager plugin
     ohai "Installing vagrant-hostmanager plugin..."
