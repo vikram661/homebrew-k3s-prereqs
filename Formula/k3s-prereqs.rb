@@ -4,7 +4,7 @@ class K3sPrereqs < Formula
   version "1.0.0"
 
   url "https://raw.githubusercontent.com/vikram661/homebrew-k3s-prereqs/main/k3s-prereqs.sh"
-  sha256 "761f4c233486f04351e2f23c723285836bdaf62290c5a48badd996815e702d8f" # Update with correct hash
+  sha256 "c004c20fc71889dfa5c25eeb0f0a283736b6499d351b6de50d160fb4b45f98ad" # Update with correct hash
 
   depends_on "yq"
 
