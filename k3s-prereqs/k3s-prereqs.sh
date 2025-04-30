@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 # Install yq (Formula)
 echo "Installing yq (formula)..."
